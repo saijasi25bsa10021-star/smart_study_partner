@@ -43,4 +43,7 @@ Notes:
 ## Contributing
 
 Feel free to open issues or submit pull requests. Keep changes small and focused.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0013595f39b1867e0d8f1b11c1670559e21c571e
