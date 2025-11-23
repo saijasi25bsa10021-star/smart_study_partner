@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Study Buddy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Smart Study Buddy</h1>
+        <form method="POST">
+            <input type="text" name="topic" placeholder="Enter a topic..." required>
+            <button type="submit">Study</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Topic: {{ result.topic }}</h2>
+            <p><strong>Summary:</strong> {{ result.summary }}</p>
+
+            <h3>Questions:</h3>
+            <ul>
+                {% for q in result.questions %}
+                    <li>{{ q }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Mini Quiz:</h3>
+            <ul>
+                {% for ques, ans in result.quiz.items() %}
+                    <li><strong>Q:</strong> {{ ques }} <br> <strong>A:</strong> {{ ans }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
