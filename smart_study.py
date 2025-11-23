@@ -13,7 +13,7 @@ my_knowledge = {
         "summary": "Plants make food from sunlight . They have this green stuff called chlorophyll that helps. Think of it like a mini solar kitchen in the leaves! 🍃",
         "questions": [
             "Chlorophyll… what does it even do?",
-            "Why sunlight ? Why is it needed?",
+            "Why sunlight git? Why is it needed?",
             "Which gas do plants release when making food? (hint: we breathe it!)"
         ],
         "quiz": {
