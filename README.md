@@ -1,49 +1,176 @@
-# Smart Study Partner
-a small,local study helper which will help the students to stay focus on their studies  using web UI and python backend script
+# 📚 Smart Study Partner
 
+ It is a powerful study partner built with the he Streamlit for Science & Math revision and learning. This app helps you study efficiently by summarizing content, generating MCQs, and evaluating your answers.
 
-## Project overview
+## Features
 
-- **Purpose:** it will help students to stay focus on their studies help them to know thieer knowledge about the topic
-- **Stack:** HTML, CSS, Python 
+-Topic-based Search: it help students by giving the information and work for searched work only
+- Automatic Summarization: it automaticly summarize the topic for the students
+- MCQ Generation: it will automaticly generates  the mcq for students to practice
+- Answer Evaluation: it will give the score so that student can see their condition
+- Dataset Support : Works with CSV files (train, validation, test sets)
 
-## Repository structure
--'index.html' : it is a web UI for our project for better access to the user
--style.css': in this we had stored styles which is the most important feature to edit our web UI
--smart_study.py: it is a python code that we use to create our project
+## Tech Stack
 
+- Frontend: Streamlit
+- Backend: Python
+- Data: Pandas, NumPy
+- ML/NLP: BERT-based extractive summarizer, Transformers
+- Environment: python-dotenv for configuration
 
-## Requirements
-- we used Python 3.8+ to run 'smart_study.py'
--we use a mordern browser to open 'index.html'
+## Installation
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/saijasi25bsa10021-star/smart_study_partner.git
+cd smart_study_partner
+```
+
+2. **Create a virtual environment** (optional but recommended):
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. **Install dependencies**:
+```bash
+pip install -r requirements.txt
+pip install bert-extractive-summarizer transformers torch
+```
+
+## Project Structure
+
+```
+smart_study_partner/
+├── app.py                      # Main Streamlit application
+├── summarizer_utils.py         # Text summarization utilities
+├── my_summarizer.py            # Custom summarizer implementation
+├── utils.py                    # MCQ generation & evaluation utilities
+├── requirements.txt            # Python dependencies
+├── dataset/                    # Study datasets
+│   ├── train.csv
+│   ├── validation.csv
+│   └── test.csv
+├── README.md                   # This file
+├── STATEMENT.md                # Project mission & vision
+├── presentation_outline.md     # Presentation structure
+└── scripts/
+    └── generate_ppt.py         # PPT generator script
+```
 
 ## Usage
 
-1. Open the web UI in your default browser (PowerShell):
+### Run the Application
 
-```powershell
-start .\index.html
+```bash
+streamlit run app.py
 ```
 
-2. Run the Python script (if applicable):
+The app will open in your browser at `http://localhost:8501`
 
-```powershell
-python .\smart_study.py
+### How to Use
+
+1. **Load Dataset**: The app automatically loads CSV files from the `dataset/` folder
+2. **Enter Topic**: Type the topic you want to study (e.g., "photosynthesis", "quadratic equations")
+3. **View Summary**: Get an AI-generated summary of relevant content
+4. **Answer MCQs**: Answer auto-generated multiple-choice questions
+5. **Get Feedback**: Receive instant evaluation of your answers
+
+## Key Modules
+
+### `app.py`
+Main Streamlit application interface with:
+- Dataset auto-loading
+- Topic filtering
+- Content display
+- MCQ interface
+
+### `summarizer_utils.py`
+Handles text summarization using BERT-based extractive summarization
+
+### `utils.py`
+Contains functions for:
+- MCQ generation from text
+- Answer evaluation & scoring
+- Dataset loading and preprocessing
+
+### `my_summarizer.py`
+Custom summarizer implementation for advanced use cases
+
 ```
 
-Notes:
-- If `smart_study.py` requires additional Python packages, install them with `pip`.
+### Dataset Format
 
-## Development
-- we use 'index.html' and 'style.css' to edit the UI and to make  or project more beautifull
--for any change in backend behavior please edit ' smart_study.py'
--see any frontend change open 'index.html' in the browser
+CSV files should contain:
+- `topic` or `subject` column
+- `content` or `text` column
+- `questions` or `passage` column
 
+Example:
+| topic | content | questions |
+|-------|---------|-----------|
+| Biology | Photosynthesis is... | What is photosynthesis? |
 
 ## Contributing
 
-Feel free to open issues or submit pull requests. Keep changes small and focused.
-<<<<<<< HEAD
+Contributions are welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-=======
->>>>>>> 0013595f39b1867e0d8f1b11c1670559e21c571e
+## Troubleshooting
+
+### Issue: Module not found errors
+**Solution**: Ensure all dependencies are installed:
+```bash
+pip install -r requirements.txt
+pip install bert-extractive-summarizer transformers torch
+```
+
+### Issue: CSV file not found
+**Solution**: Ensure CSV files are in the `dataset/` folder
+
+### Issue: Streamlit not running
+**Solution**: Check your Python environment and try:
+```bash
+streamlit run app.py --logger.level=debug
+```
+
+## Performance Tips
+
+- Pre-process large datasets to reduce loading time
+- Use the validation set for faster testing
+- Cache summarization results for repeated queries
+
+## Future Enhancements
+
+- Support for more file formats (XLSX, PDF, DOCX)
+-  Multi-language support
+-  User progress tracking & save sessions
+-  Advanced analytics & learning insights
+-  User authentication
+-  Cloud deployment support
+
+## License
+
+This project is open-source. See `LICENSE` for details.
+
+## Contact & Support
+
+For issues, questions, or suggestions:
+- Open an issue on GitHub
+- Check the `STATEMENT.md` for project vision
+
+## Author
+
+**Repository**: [smart_study_partner](https://github.com/saijasi25bsa10021-star/smart_study_partner)
+
+**Owner**: saijasi25bsa10021-star
+
+---
+
+**Last Updated**: December 5, 2025
+
+
